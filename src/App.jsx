@@ -1,10 +1,16 @@
+import { GlobalStyled } from "./GlobalStyled";
+import { Aside } from "./components/Aside/Aside";
+
 function App() {
+    return (
+        <>
+            <GlobalStyled />
+            <div id="app">
+                <Aside />
+            </div>
+        </>
 
-  return (
-    <>
-      <h1>Hello VITE</h1>
-    </>
-  )
-}
+    )
+};
 
-export default App
+export default App;
