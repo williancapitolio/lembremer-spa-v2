@@ -1,9 +1,9 @@
-import { SideBar } from "./AsideStyled";
+import { AsideStyled } from "./AsideStyled";
 
-export function Aside() {
+export default function Aside() {
     return (
         <>
-            <SideBar>
+            <AsideStyled>
                 <strong>Caderno de Notas</strong>
                 <form>
                     <div className="input-block">
@@ -16,7 +16,7 @@ export function Aside() {
                     </div>
                     <button type="submit">Salvar</button>
                 </form>
-            </SideBar>
+            </AsideStyled>
         </>
     )
 };

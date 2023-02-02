@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SideBar = styled.aside`
+export const AsideStyled = styled.aside`
     width: 320px;
     margin-bottom: 30px;
     background: #FFF;
