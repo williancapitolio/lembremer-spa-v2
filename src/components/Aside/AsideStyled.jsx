@@ -9,6 +9,11 @@ export const AsideStyled = styled.aside`
     padding: 30px 20px;
     position: fixed;
 
+    @media (max-width: 1000px) {
+        position: relative;
+        width: 100%;
+    }
+
     strong {
         font-size: 20px;
         text-align: center;
