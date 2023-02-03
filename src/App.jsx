@@ -22,8 +22,8 @@ export default function App() {
                 <Aside />
                 <main>
                     <ul>
-                        {allNotes.map(data => (
-                            <Card data={data} />
+                        {Object.values(allNotes).map((data, index) => (
+                            <Card data={data} key={index} />
                         ))}
                     </ul>
                 </main>
