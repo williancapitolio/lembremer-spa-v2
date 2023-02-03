@@ -1,8 +1,20 @@
+import { useState, useEffect } from "react";
+import { api } from "./services/Api";
 import { GlobalStyled } from "./GlobalStyled";
 import Aside from "./components/Aside/Aside";
 import Card from "./components/Card/Card";
 
 export default function App() {
+    const [allNotes, setAllNotes] = useState([]);
+
+    useEffect(() => {
+        async function getAllNotes() {
+            const response = await api.get("/notes");
+            setAllNotes(response.data);
+        }
+        getAllNotes()
+    }, [])
+
     return (
         <>
             <GlobalStyled />
@@ -10,15 +22,12 @@ export default function App() {
                 <Aside />
                 <main>
                     <ul>
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
+                        {allNotes.map(data => (
+                            <Card data={data} />
+                        ))}
                     </ul>
                 </main>
             </div>
         </>
-
     )
 };

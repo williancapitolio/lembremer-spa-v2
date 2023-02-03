@@ -1,14 +1,14 @@
 import { CardStyled } from "./CardStyled";
 
-export default function Card() {
+export default function Card({ data }) {
     return (
         <>
             <CardStyled>
                 <div>
-                    <strong>Fazer Compras</strong>
+                    <strong>{data.title}</strong>
                     <span>x</span>
                 </div>
-                <textarea defaultValue="Lorem ipsum dolor, sit amet consectetur adipisicing elit."></textarea>
+                <textarea defaultValue={data.text}></textarea>
                 <span>!</span>
             </CardStyled>
         </>
