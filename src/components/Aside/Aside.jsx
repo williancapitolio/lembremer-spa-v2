@@ -4,16 +4,16 @@ import { AsideStyled } from "./AsideStyled";
 
 export default function Aside() {
     const [title, setTitle] = useState('');
-    const [notes, setNotes] = useState('');
+    const [text, setText] = useState('');
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const response = await api.post("/notes",
+        const response = await api.post("/notes", {
             title,
-            notes
-        )
+            text
+        });
         setTitle("");
-        setNotes("");
+        setText("");
     }
 
     return (
@@ -33,8 +33,8 @@ export default function Aside() {
                         <label htmlFor="notes">Anotações</label>
                         <textarea
                             required
-                            value={notes}
-                            onChange={e => setNotes(e.target.value)}
+                            value={text}
+                            onChange={e => setText(e.target.value)}
                         />
                     </div>
                     <button type="submit">Salvar</button>
